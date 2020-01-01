@@ -1,0 +1,88 @@
+﻿@model IT_Department_Store.Models.DeviceMovement
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>DeviceMovement</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Commander.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Commander.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Device.DeviceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Device.DeviceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NewPlace.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NewPlace.Text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreviousPlace.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreviousPlace.Text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ranker.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ranker.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Soldier.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soldier.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("المستخدمين", "Index", "Users")</li>
+                    <li>@Html.ActionLink("الأجهزة", "Index", "Devices")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">الأجهزة <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("إضافة جهاز", "Create", "Devices")</li>
+                            <li>@Html.ActionLink("كل الأجهزة", "Index", "Devices")</li>
+                            <li>@Html.ActionLink(" الأجهزة الصالحة", "Filter", "Devices", new { statusId = 1 }, null)</li>
+                            <li>@Html.ActionLink("الأجهزة العاطلة", "Filter", "Devices", new { statusId = 2 }, null)</li>
+                            <li>@Html.ActionLink("الأجهزة تحت الصيانة", "Filter", "Devices", new { statusId = 3 }, null)</li>
+                            <li>@Html.ActionLink("الاجهزة تحت الصيانة بالخارج", "Filter", "Devices", new { statusId = 4 }, null)</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">عمليات الصيانة <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("إضافة عملية صيانة", "Create", "MaintenanceOperations")</li>
+                            <li>@Html.ActionLink("كل عمليات الصيانة", "Index", "MaintenanceOperations")</li>
+                            <li>@Html.ActionLink(" تم اصلاحه", "Filter", "MaintenanceOperations", new {statusId = 1}, null)</li>
+                            <li>@Html.ActionLink("تحت الصيانة", "Filter", "MaintenanceOperations", new {statusId = 2}, null)</li>
+                            <li>@Html.ActionLink("لم يتم اصلاحه", "Filter", "MaintenanceOperations", new {statusId = 3}, null)</li>
+                            <li>@Html.ActionLink("اصلاح بالخارج", "Filter", "MaintenanceOperations", new {statusId = 4}, null)</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("تحركات الأجهزة", "Index", "DeviceMovements")</li>
+                    <li>@Html.ActionLink("الطابعات", "Index", "Home")</li>
+                    <li>@Html.ActionLink("الأحبار", "Index", "Home")</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

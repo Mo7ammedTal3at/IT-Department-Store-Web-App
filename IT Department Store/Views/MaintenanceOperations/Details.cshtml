@@ -1,0 +1,84 @@
+﻿@model IT_Department_Store.Models.MaintenanceOperation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MaintenanceOperation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DeviceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Device.DeviceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status.Text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecevierId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Recevier.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceiveTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceiveTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Problem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Problem)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Solution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Solution)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EndTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ExporterId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exporter.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
